@@ -41,19 +41,14 @@ svg.selectAll("mybar")
     .attr("width", x.bandwidth())
     .attr("height", d => height - y(d.Y))
     .attr("fill", "#FFA500")
-    
-
-    
-    //.on("mouseover", mouseover)
-    //.on("mousemove", mousemove)
-    //.on("mouseleave", mouseleave);
-
+       
+    .on("mouseover", mouseover)
+    .on("mousemove", mousemove)
+    .on("mouseleave", mouseleave);
 })
 
 
 
-
-/*
   // create a tooltip
   var Tooltip = d3.select("#d3-container")
     .append("div")
@@ -66,25 +61,30 @@ svg.selectAll("mybar")
     .style("padding", "5px")
 
   // Three function that change the tooltip when user hover / move / leave a cell
-  var mouseover = function(d) {
+  var mouseover = function(event, d) {
     Tooltip
       .style("opacity", 1)
     d3.select(this)
       .style("stroke", "black")
       .style("opacity", 1)
   }
-  var mousemove = function(d) {
+
+
+  var mousemove = function(event, d) {
     Tooltip
-      .html("The exact value of<br>this cell is: " + d.Y)
-      .style("left", (d3.mouse(this)[0]+70) + "px")
-      .style("top", (d3.mouse(this)[1]) + "px")
+    .html("The exact value of<br>this cell is: " + d.Y)
+    .style("left", (d3.mouse(this)[0]+70) + "px")
+    .style("top", (d3.mouse(this)[1]) + "px")
+
   }
+
+
   var mouseleave = function(d) {
     Tooltip
       .style("opacity", 0)
     d3.select(this)
       .style("stroke", "none")
       .style("opacity", 0.8)
-  } */
+  } 
 
 
